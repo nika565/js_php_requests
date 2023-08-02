@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.section {
+    width: 100%;
+    min-height: 100vh;
+    background-color: royalblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formulario {
+    width: 270px;
+    height: 270px;
+    background-color: white;
+    color: midnightblue;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.barraPesq{
+    background-color: red;
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.pesquisa{
+    width: 550px;
+    margin: 0px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.box {
+    display: flex;
+    justify-content: space-around;
+    gap: 100px;
+}
+
+h1{
+    color: white;
+    margin-top: 40px;
+}
+
+label{
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+form input{
+    padding: 5px;
+    font-size: 18px;
+    margin: 5px;
+}
+
+form button{
+    margin-top: 30px;
+}
+
+
+button{
+    width: 200px;
+    height: 48px;
+    background-color: midnightblue;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    margin: 0px auto 0px auto;
+}
+
+.editar{
+    background-color: yellow;
+    color: black;
+}
+
+.deletar{
+    background-color: red;
+}
+
+.lista{
+    width: 450px;
+    background-color: white;
+    padding: 30px;
+}
+
+#lista{
+    font-size: 34px;
+}
+
+li{
+    margin-top: 15px;
+    font-size: 26px;
+}
+
+
