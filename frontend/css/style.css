@@ -11,22 +11,27 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 100px;
 }
 
 .formulario {
     width: 270px;
-    height: 270px;
+    min-height: 270px;
     background-color: white;
     color: midnightblue;
-    padding: 30px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
 }
 
+ul {
+    list-style-type: none;
+  }
+
 .barraPesq{
     background-color: red;
     display: flex;
-    margin-top: 50px;
+    margin-top: 20px;
     margin-bottom: 50px;
 }
 
@@ -43,9 +48,14 @@
     gap: 100px;
 }
 
+.formulario button{
+    width: 100%;
+    padding: 10px;
+}
+
 h1{
     color: white;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 label{
@@ -74,7 +84,7 @@ button{
     font-weight: bold;
     border: none;
     cursor: pointer;
-    margin: 0px auto 0px auto;
+    margin: 0px;
 }
 
 .editar{
@@ -99,6 +109,12 @@ button{
 li{
     margin-top: 15px;
     font-size: 26px;
+}
+
+li a{
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
 }
 
 

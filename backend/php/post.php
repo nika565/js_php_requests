@@ -14,10 +14,19 @@ header("Content-Type: application/json");
 // Solicitando o arquivo de conexão com o banco de dados
 require_once('../database/conn.php');
 
-function guardaBanco($nome, $email, $conexao)
+function guardaBanco($dados, $conexao)
 {
+
+    // Pegando os dados pessoais do array de dados para salvar no banco
+    $nome = $dados['nome'];
+    $email = $dados['email'];
+    $cargo = $dados['cargo'];
+    $senha = $dados['senha'];
+
+    $senhaCriptografada = password_hash($senha, PASSWORD_DEFAULT);
+
     // Salvar no banco
-    $query = "INSERT INTO clientes(nome, email) VALUES('$nome', '$email')";
+    $query = "INSERT INTO clientes(nome, email, cargo, senha) VALUES('$nome', '$email', '$cargo', '$senhaCriptografada')";
 
     // Resultado da inserção
     $resultado = mysqli_query($conexao, $query);
@@ -40,15 +49,19 @@ function guardaBanco($nome, $email, $conexao)
 }
 
 // Função para verificar ja existe os registros antes de salvar
-function verificaRegistro($nome, $email, $conexao)
+function verificaRegistro($dados, $conexao)
 {
+    // Pegando os dados pessoais do array de dados para salvar no banco
+    $nome = $dados['nome'];
+    $email = $dados['email'];
+
     $query = "SELECT * FROM clientes WHERE nome = '$nome' AND email = '$email'";
     $resultado = mysqli_query($conexao, $query);
 
     if (mysqli_num_rows($resultado) > 0) {
-        echo json_encode(['mensagem'=>'Esse usuário já existe no banco']);
-    }else{
-        guardaBanco($nome, $email, $conexao);
+        echo json_encode(['mensagem' => 'Esse usuário já existe no banco']);
+    } else {
+        guardaBanco($dados, $conexao);
     }
 }
 
@@ -64,18 +77,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Verificar se o JSON é válido
     if ($dados === null) {
         $resposta = [
-            'mensagem' => 'JSON inválido'
+            'msgErro' => 'JSON inválido'
         ];
 
         echo json_encode($resposta);
 
+    } else {
+        // salvando dados no banco
+        verificaRegistro($dados, $conn);
     }
 
-    // salvando dados no banco
-    $nome = $dados['nome'];
-    $email = $dados['email'];
-
-    verificaRegistro($nome, $email, $conn);
-
+} else {
+    echo json_encode(['msgErro' => 'ALGO DEU ERRADO']);
 }
 ?>

@@ -1,0 +1,64 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: midnightblue;
+    color: white;
+    font-family: sans-serif;
+}
+
+h1{
+    text-align: center;
+    margin-top: 40px;
+}
+
+section{
+    width: 50vw;
+    height: 80vh;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    font-size: 32px;
+    margin-top: 10px;
+}
+
+input{
+    margin-top: 5px;
+    padding: 12px;
+    font-size: 24px;
+}
+
+#exibirSenha{
+
+    font-size: 20px;
+    background-color: crimson;
+    width: 150px;
+    height: 55px;
+    padding-top: 10px;
+    
+}
+
+button{
+    cursor: pointer;
+    background-color: midnightblue;
+    border-radius: 5px;
+    margin-top: 25px;
+    color: white;
+    padding: 5px;
+    font-size: 32px;
+}

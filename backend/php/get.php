@@ -1,5 +1,4 @@
 <?php
-
 // Definindo qual domínio pode acessar esse arquivo
 header('Access-Control-Allow-Origin: http://127.0.0.1:5500');
 
@@ -36,7 +35,8 @@ function buscaNoBanco($dado, $conexao) {
             $usuario = [
                 "id" => $linha['id'],
                 "nome" => $linha['nome'],
-                "email" => $linha['email']
+                "email" => $linha['email'],
+                "cargo" => $linha['cargo']
             ];
 
             // Transformando em objeto JSON e mandando para o front-end 

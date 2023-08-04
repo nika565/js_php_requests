@@ -12,6 +12,16 @@
 
     <section class="section">
         <h1>REQUISIÇÕES PHP E JS</h1>
+        <br>
+        <h2>Página inicial</h2>
+
+        <nav>
+            <ul>
+                <li><a class="admLink" href="./adm.html">Pagina adm</a></li>
+                <li><a href="./funcionario.html">Pagina func</a></li>
+                <li><a href="./login.html">Login</a></li>
+            </ul>
+        </nav>
 
         <div class="barraPesq">
             <input class="pesquisa" type="text" placeholder="Pesquise...">
@@ -20,21 +30,37 @@
 
         <div class="box">
 
-            
+
             <form class="formulario">
 
                 <label>Nome:</label>
-                <input class="input nome" type="text" required autofocus>
+                <input type="text" class="input nome" required autofocus>
 
-               
+                <br>
 
                 <label>Email:</label>
                 <input type="email" class="input email" required>
+                
+                <br>
+
+                <label>Senha:</label>
+                <input type="password" class="input senha" required>
+
+                <br>
+
+                <label>Selecione uma cargo:</label>
+                <select id="cargo">
+
+                    <option value="adm">ADM</option>
+                    <option value="funcionario">Funcionário</option>
+    
+                </select>
+
 
                 <button type="submit">Enviar</button>
 
             </form>
-            
+
 
             <ul class="lista">
                 <p id="lista">Lista de nomes requisitados:</p>
@@ -44,8 +70,9 @@
 
 
     </section>
-
+    
     <script src="../js/index.js"></script>
+
 </body>
 
 </html>

@@ -4,7 +4,7 @@
 
 // Pegando o evento de "submit" do formulário
 const form = document.querySelector('.formulario');
-form.addEventListener('submit', (evento) => {
+form.addEventListener('submit', evento => {
 
     // Pausando o evento para pegar os dados do formulário
     evento.preventDefault();
@@ -12,12 +12,16 @@ form.addEventListener('submit', (evento) => {
     // Selecionando os valores presentes nos inputs do formulário HTML
     const nome = document.querySelector('.nome').value;
     const email = document.querySelector('.email').value;
+    const senha = document.querySelector('.senha').value;
+    const cargo = document.querySelector('#cargo').value;
 
-    /* Craindo um objetos com esses dados do formulário pois ele vai se tronar um objeto JSON
+    /* Criando um objetos com esses dados do formulário pois ele vai se tronar um objeto JSON
     para ser enviado na requisição */
     const pessoa = {
         nome: nome,
-        email: email
+        email: email,
+        cargo: cargo,
+        senha: senha
     }
 
     // Passando o objeto que vai ser enviado para o back-end
@@ -111,10 +115,10 @@ function exibir(dados) {
 
     const usuario = document.createElement('li');
 
-    if(typeof(dados.nome) === 'undefined'){
+    if (typeof (dados.nome) === 'undefined') {
         alert(dados.msgErro);
     } else {
-        usuario.innerText = dados.nome;
+        usuario.innerText = ` ${dados.id}: ${dados.nome} -> ${dados.cargo}`
         lista.appendChild(usuario);
     }
 }
