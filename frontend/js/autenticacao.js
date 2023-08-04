@@ -19,7 +19,6 @@ async function verificaToken(token) {
 
         const resposta = await fetch(`http://localhost/study_php/crud_php/backend/php/autenticacao.php`, {
             method: 'POST',
-            credentials: 'include', // Habilita o envio de cookies de sessão
             headers: {
                 'Content-Type': 'application/json'
             },
