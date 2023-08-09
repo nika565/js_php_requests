@@ -37,7 +37,7 @@ async function enviaBackEnd(dadosEnviados) {
 
         // Enviando para o back-end
         // *ATENÇÃO* a url tem base no caminho de pastas, então se o caminho de pastas for diferente, é só copiar a url do arquivo PHP E JOGAR NO FETCH
-        const resposta = await fetch(`http://localhost/study_php/crud_php/backend/php/post.php`, {
+        const resposta = await fetch(`http://localhost/js_php_requests/backend/php/post.php`, {
             // Método da requisição
             method: 'POST',
             // Cabeçalho da requisição informando o conteúdo
@@ -92,7 +92,7 @@ async function buscarBackEnd(parametro) {
         // Fetch faz o "GET" por padrão então a configuração não é obrigatória
 
         // *ATENÇÃO* a url tem base no caminho de pastas, então se o caminho de pastas for diferente, é só copiar a url do arquivo PHP E JOGAR NO FETCH
-        const resposta = await fetch(`http://localhost/study_php/crud_php/backend/php/get.php?nome=${parametro}`);
+        const resposta = await fetch(`http://localhost/js_php_requests/backend/php/get.php?nome=${parametro}`);
 
         // Convertendo a resposta em um objeto Javascript
         const dados = await resposta.json();

@@ -17,7 +17,7 @@ async function verificaToken(token) {
 
     try {
 
-        const resposta = await fetch(`http://localhost/study_php/crud_php/backend/php/autenticacaoAdm.php`, {
+        const resposta = await fetch(`http://localhost/js_php_requests/backend/php/autenticacaoAdm.php`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

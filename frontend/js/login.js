@@ -28,7 +28,7 @@ async function verificandoLogin(dados) {
     try {
 
         // Enviando a requisição
-        const respostaServidor = await fetch(`http://localhost/study_php/crud_php/backend/php/login.php`, {
+        const respostaServidor = await fetch(`http://localhost/js_php_requests/backend/php/login.php`, {
 
             method: 'POST',
             Headers: {
