@@ -1,7 +1,7 @@
-// Somente ADM´s podem abrir essa página
-const cargo = localStorage.getItem('cargo');
+// Pega o token armazenado no localStorage
 const token = localStorage.getItem('token');
 
+// Quando a pagina for carregada, dispara uma função para verificar se o token é válido
 window.addEventListener('load', () => {
 
     verificaToken(token);
@@ -10,16 +10,15 @@ window.addEventListener('load', () => {
 
 async function verificaToken(token) {
 
-    // objeto a ser enviado para o servidor
+    // objeto a ser enviado para o servidor para validação
     objToken = {
         token: token
     }
 
     try {
 
-        const resposta = await fetch(`http://localhost/study_php/crud_php/backend/php/autenticacao.php`, {
+        const resposta = await fetch(`http://localhost/study_php/crud_php/backend/php/autenticacaoAdm.php`, {
             method: 'POST',
-            credentials: 'include', // Habilita o envio de cookies de sessão
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -30,6 +29,7 @@ async function verificaToken(token) {
 
         const objetoRetornado = await resposta.json();
 
+        // Verificando o que o servidor retornou
         console.log(objetoRetornado);
 
         verificaPermissao(objetoRetornado);
@@ -40,9 +40,10 @@ async function verificaToken(token) {
 
 }
 
+// Função para verificar se a autenticação é falsa
 function verificaPermissao (objeto) {
 
-    if (cargo !== 'adm' || objeto.autenticado !== true) {
+    if (objeto.autenticado === false) {
 
         // Ocultar o body
         document.body.style.display = "none";

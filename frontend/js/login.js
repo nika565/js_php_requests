@@ -63,25 +63,12 @@ async function verificandoLogin(dados) {
 
 function confirmaLogin(respostaServidor) {
 
-    //Salvando os dados no localStorage
-    localStorage.setItem('cargo', respostaServidor.cargo);
+    //Salvando o token no localStorage
     localStorage.setItem('token', respostaServidor.token);
 
-    if (respostaServidor.cargo === 'adm') {
-
-        // Levando para a pagina correspondente
-        window.location.href = '../pages/adm.html';
-        alert(`BEM VINDO: ${respostaServidor.nome}`);
-
-    } else {
-
-        // Levando para a pagina correspondente
-        window.location.href = '../pages/funcionario.html';
-        alert(`BEM VINDO: ${respostaServidor.nome}`);
-
-    }
-
-
+    // Levando para a pagina inicial
+    window.location.href = '../pages/index.html';
+    alert(`BEM VINDO`);
 
 }
 
